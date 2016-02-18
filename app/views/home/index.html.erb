@@ -1,0 +1,17 @@
+<% @questions.each do |q| %>
+<div class="lead well">
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img width="100" class="media-object" src="/images/question-icon.png" alt="Question">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= q.email %></h4>
+      <%= time_ago_in_words q.created_at %>
+      <p><%= q.body %></p>
+      <a class="btn btn-default" href="<%= question_path(q) %>">View Answers</a>
+    </div>
+  </div>
+</div>
+<% end %>

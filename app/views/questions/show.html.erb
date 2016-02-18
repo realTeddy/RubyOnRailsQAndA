@@ -1,0 +1,31 @@
+<div class="lead well">
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img width="100" class="media-object" src="/images/question-icon.png" alt="Question">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= @question.email %></h4>
+      <p><%= @question.body %></p>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#newAnswer">
+  Submit new answer
+</button>
+<%= render 'home/new_answer_form' %>
+
+<% @question.answers.each do |answer| %>
+<div class="media"> 
+  <div class="media-left">
+   <a href="#">
+    <img class="media-object" src="/images/answer-icon.png" width="60"> </a> 
+  </div> 
+  <div class="media-body">
+   <h4 class="media-heading"><%= answer.email %></h4> 
+   <p><%= answer.body %></p>
+ </div> 
+</div>
+<% end %>
